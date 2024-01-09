@@ -30,13 +30,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-			ts_update()
-		end,
-	})
+  	use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
 	use("nvim-treesitter/playground")
 	use("theprimeagen/harpoon")
 	use("mattn/emmet-vim")
@@ -87,7 +81,6 @@ return require("packer").startup(function(use)
 	})
 
 	use("folke/zen-mode.nvim")
-	use("github/copilot.vim")
 	use("eandrju/cellular-automaton.nvim")
 	use("laytan/cloak.nvim")
 end)
